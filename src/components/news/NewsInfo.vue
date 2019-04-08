@@ -14,7 +14,7 @@
     <div class="content" v-html="newsinfo.content"></div>
 
     <!-- 评论子组件区域 -->
-    <comment-box :id="this.id"></comment-box>
+    <!-- <comment-box :id="this.id"></comment-box> -->
   </div>
 </template>
 
@@ -35,7 +35,7 @@ export default {
   methods: {
     getNewsInfo() {
       // 获取新闻详情
-      this.$http.get("api/getnew/" + this.id).then(result => {
+      this.$http.get("http://host812065008.s533.pppf.com.cn/Shop/index.php/newsinfo/" + this.id).then(result => {
         if (result.body.status === 0) {
           this.newsinfo = result.body.message[0];
         } else {

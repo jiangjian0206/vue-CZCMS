@@ -34,7 +34,7 @@ export default {
   methods: {
     getNewsList() {
       // 获取新闻列表
-      this.$http.get("api/getnewslist").then(result => {
+      this.$http.get("http://host812065008.s533.pppf.com.cn/Shop/index.php/getnewslist").then(result => {
         if (result.body.status === 0) {
           // 如果没有失败，应该把数据保存到 data 上
           this.newslist = result.body.message;
